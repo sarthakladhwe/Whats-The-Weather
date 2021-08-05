@@ -4,6 +4,71 @@
   box-sizing: border-box;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.preloader-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.weatherboi {
+  height: 350px;
+}
+
+.preloader h3 {
+  position: absolute;
+  top: 20%;
+  transform: translatey(-20%);
+  color: white;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.cloud1,
+.cloud2,
+.cloud3 {
+  height: 100px;
+  position: absolute;
+  right: 0%;
+  z-index: -1;
+}
+
+.cloud1 {
+  top: 25%;
+  transform: translate(100%, -25%);
+  animation: clouds 3s ease infinite;
+}
+
+.cloud2 {
+  top: 50%;
+  transform: translate(100%, -50%);
+  animation: clouds 3s ease infinite 2s;
+}
+
+.cloud3 {
+  top: 75%;
+  transform: translate(100%, -75%);
+  animation: clouds 3s ease infinite 4s;
+}
+
+@keyframes clouds {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 130%;
+  }
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -21,6 +86,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  display: none;
 }
 
 .temperature {
@@ -30,6 +96,17 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .weatherboi {
+    height: 200px;
+  }
+
+  .preloader h3 {
+    font-size: 20px;
+  }
 }
 
 .degree-section {
