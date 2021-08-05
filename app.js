@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
                     preloader.classList.add('preloader-finish');
                     location.style.display = "initial";
                     temperature.style.display = "initial";
-                },(3*1000));
+                },(2*1000));
                 
                 //Celcius to F
                 let fahrenheit = temp * 9 / 5 + 32;
